@@ -5,9 +5,9 @@
   "main": "dist/index.js",
   "module": "",
   "scripts": {
-    "dev": "nodemon --watch src --exec ts-node src/index.ts",
-    "build": "tsc",
-    "start": "node dist/index.js",
+    "dev": "node api.js && node init && nodemon --watch src --exec ts-node src/index.ts",
+    "build": "node api.js && node init && tsc",
+    "start": "node api.js && node init && node dist/index.js",
     "prisma:migrate": "npx prisma migrate dev",
     "prisma:generate": "npx prisma generate",
     "prisma:studio": "npx prisma studio"
@@ -32,6 +32,7 @@
     "lodash": "^4.17.21",
     "mongoose": "^7.6.3",
     "morgan": "^1.10.0",
+    "node-fetch": "^3.3.2",
     "nodemailer": "^6.9.7",
     "otp-generator": "^4.0.1",
     "passport": "0.5",
